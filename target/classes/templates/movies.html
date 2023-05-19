@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="~{base/general :: head}">
+<body>
+    <div th:replace="~{base/general :: menu}"></div>
+    <div id="content">
+        <div class="movieItem" th:each="movie : ${movies}">
+            <a  th:href="@{${'/movies/' + movie.imdb_id}}" th:text="|${movie.title} (${movie.year})|">Película no encontrada</a>
+            <form class="formMovieItem" th:action="@{'/movies/' + ${movie.imdb_id}}" th:method="delete" th:title="borrar">
+                <button class="fa fa-trash movieItemButton" type="submit"></button>
+            </form>
+            <a class="fa fa-edit movieItemButton" th:href="@{${'/movies/update/' + movie.imdb_id}}" th:title="editar"></a>
+        </div>    
+    </div>
+    <a th:href="@{${'./?page=' + page.sum(page, 1)}}">Pagina siguiente</a>
+    <a th:href="@{${'./?page=' + page.sum(page, -1)}}">Pagina anterior</a>
+</body>
+</html>

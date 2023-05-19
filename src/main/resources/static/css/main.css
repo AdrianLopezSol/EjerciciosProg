@@ -1,0 +1,49 @@
+#menu{
+    display: block;
+    height: 40px;
+    background-color: #333;
+    color: #eee;
+}
+
+#menu > a {
+    color: #eee;
+    text-decoration: none;
+    margin: auto 20px;
+    vertical-align: middle;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+}
+
+#menu > a:hover {
+    color: #fff;
+}
+
+#content {
+    padding-top: 20px;;
+}
+
+.movieItem {
+    padding: 10px;
+    background-color: #bbb;
+}
+
+#content>div:nth-of-type(odd) {
+    background-color: #eee;
+  }
+
+.movieItem > a {
+    text-decoration: none;
+}
+
+.formMovieItem {
+    display: inline;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.movieItemButton {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="~{base/general :: head}">
+<body>
+    <div th:replace="~{base/general :: menu}"></div>
+    <div id="content">
+        <form action="/movies" method="POST">
+            <label for="imdb_id">Id imdb: </label>
+            <input type="text" name="imdb_id"></br></br>
+            <label for="title">Título: </label>
+            <input type="text" name="title"></br></br>
+            <label for="year">Año: </label>
+            <input type="number" name="year"></br></br>
+            <label for="runtime">Duración (minutos): </label>
+            <input type="number" name="runtime"></br></br>
+            <label for="director_id">Director:</label>
+            <select name="director_id">
+                <option th:each="director : ${directors}" th:value="${director.imdb_id}" th:text="${director.name}"></option>
+            </select></br></br>
+            <label for="actors_id">Actores:</label>
+            <select name="actors_id" multiple size="10">
+                <option th:each="actor : ${actors}" th:value="${actor.imdb_id}" th:text="${actor.name}"></option>
+            </select></br></br>
+            <input type="submit" value="Ok">
+
+        </form>    
+    </div>    
+</body>
+</html>
